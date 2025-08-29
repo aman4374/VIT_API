@@ -24,6 +24,13 @@ app.use((err, req, res, next) => {
     error: 'Internal server error'
   });
 });
+// Root route
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: "API is running. Use POST /bfhl to test."
+  });
+});
+
 
 // 404 handler
 app.use('*', (req, res) => {
